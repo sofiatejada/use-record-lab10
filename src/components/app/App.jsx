@@ -1,5 +1,22 @@
-import React from 'react';
+const useRecord = (init) => {
 
-export default function App() {
-  return <h1>Hello World</h1>;
+  const [current, setCurrent] = useState();
+
+
+
+};
+
+function App() {
+  const { current } = useRecord('#FF0000');
+
+  return (
+    <>
+      <button onClick={console.log('undo handler here')}>undo</button>
+      <button onClick={console.log('redo handler here')}>redo</button>
+      <input type="color" value={current} onChange={({ target }) => console.log('record(target.value)')} />
+      <div style={{ backgroundColor: current, width: '10rem', height: '10rem' }}></div>
+    </>
+  )
 }
+
+export default App;
