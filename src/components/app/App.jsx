@@ -24,12 +24,13 @@ const useRecord = (init) => {
 
   const undo = () => {
     const currentIndex = colorInputs.indexOf(current);
-    const arrayLength = colorInputs.length;
 
     currentIndex !== 0 ?
     setCurrent(colorInputs[currentIndex - 1]) :
     current;
   }
+
+  console.log(colorInputs);
 
   return { current, record, undo, redo };
 };
