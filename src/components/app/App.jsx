@@ -8,22 +8,28 @@ const useRecord = (init) => {
 
   const redo = () => {
     const currentIndex = colorInputs.indexOf(current);
-    setCurrent(colorInputs[currentIndex + 1]);
+    const arrayLength = colorInputs.length;
+
+    arrayLength - 1 !== currentIndex ?
+    setCurrent(colorInputs[currentIndex + 1]) :
+    current;
   }
 
   const record = (value) => {
-    const currentIndex = colorInputs.indexOf(current);
+    const currentIndex = colorInputs.indexOf(current) + 1;
     colorInputs.splice(currentIndex, 0, value);
     setPastColors(colorInputs);
     setCurrent(value)
-    console.log(currentIndex);
   }
 
   const undo = () => {
     const currentIndex = colorInputs.indexOf(current);
-    setCurrent(colorInputs[currentIndex - 1]);
+    const arrayLength = colorInputs.length;
+
+    currentIndex !== 0 ?
+    setCurrent(colorInputs[currentIndex - 1]) :
+    current;
   }
-  console.log(colorInputs);
 
   return { current, record, undo, redo };
 };
