@@ -14,4 +14,10 @@ describe('the app', () => {
 
     const colorWheel = screen.getByLabelText('butthole');
     expect(colorWheel.style.backgroundColor).toEqual(red);
+
+    const nextColor = screen.getByLabelText('color-wheel');
+    fireEvent.change(nextColor, blue);
+    waitFor(() => 
+      expect(nextColor.style.backgroundColor).toEqual(blue));
+  });
 });
