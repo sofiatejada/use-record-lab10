@@ -41,10 +41,11 @@ function App() {
       <button onClick={undo}>undo</button>
       <button onClick={redo}>redo</button>
       <input 
+        aria-label="color-wheel"
         type="color" 
         value={current} 
         onChange={({ target }) => record(target.value)} />
-      <div style={
+      <div aria-label="butthole" style={
         { 
           backgroundColor: current, width: '10rem', height: '10rem' 
         }
