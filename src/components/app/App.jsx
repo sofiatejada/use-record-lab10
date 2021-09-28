@@ -38,8 +38,8 @@ function App() {
 
   return (
     <>
-      <button onClick={undo}>undo</button>
-      <button onClick={redo}>redo</button>
+      <button aria-label="undo" onClick={undo}>undo</button>
+      <button aria-label="redo" onClick={redo}>redo</button>
       <input 
         aria-label="color-wheel"
         type="color" 
